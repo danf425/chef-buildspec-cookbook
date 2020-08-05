@@ -25,3 +25,5 @@ phases:
       - echo [PHASE] Entered the post_build phase...
       - cd chef-buildspec-cookbook
       - kitchen test
+      
+# Variable for install phase items
