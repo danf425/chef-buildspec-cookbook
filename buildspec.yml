@@ -17,6 +17,7 @@ phases:
       - dpkg -i containerd.io_1.2.5-1_amd64.deb
       - dpkg -i docker-ce-cli_18.09.6~3-0~ubuntu-xenial_amd64.deb
       - dpkg -i docker-ce_18.09.6~3-0~ubuntu-xenial_amd64.deb
+      - apt-get update -y
       - apt-get install -y rubygems ruby-dev
       - chef gem install kitchen-docker
   build:
