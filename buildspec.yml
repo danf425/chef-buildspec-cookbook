@@ -1,5 +1,9 @@
 version: 0.2
 
+env:
+  variables:
+    HAB_NOCOLORING : false
+    
 phases:
   install:
     commands:
