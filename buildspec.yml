@@ -3,6 +3,7 @@ version: 0.2
 phases:
   install:
     commands:
+      - echo [PHASE] Entered the install phase...
       - wget https://packages.chef.io/files/stable/chefdk/3.9.0/ubuntu/16.04/chefdk_3.9.0-1_amd64.deb
       - dpkg -i chefdk_3.9.0-1_amd64.deb
       - git clone https://github.com/scottpgallagher/chef-buildspec-cookbook.git
@@ -14,9 +15,13 @@ phases:
       - dpkg -i docker-ce_18.09.6~3-0~ubuntu-xenial_amd64.deb
       - apt-get install -y rubygems ruby-dev
       - chef gem install kitchen-docker
+  build:
+    commands:
+      - echo [PHASE] Entered the build phase... 
+      - kitchen create
+      - kitchen converge
   post_build:
     commands:
+      - echo [PHASE] Entered the post_build phase...
       - cd chef-buildspec-cookbook
       - kitchen test
-# Add kitchen create
-# Add kitchen converge
